@@ -1,6 +1,6 @@
 {
-  "name": "snail-api",
-  "version": "1.0.0",
+  "name": "snail-api-wrapper",
+  "version": "1.0.2",
   "description": "Easily create payment integrations for your bots. Verify purchases, manage subscriptions, and monetize your apps.",
   "main": "index.js",
   "scripts": {
