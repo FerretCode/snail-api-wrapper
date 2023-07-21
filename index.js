@@ -23,9 +23,7 @@ module.exports.Snail = class {
               "Content-Type": "application/json",
             },
           }
-        );
-
-        res.catch(reject);
+        ).catch(reject);
 
         if (res.status !== 200) return resolve(false);
 
@@ -63,9 +61,7 @@ module.exports.Snail = class {
             name: options.name,
             price: options.price,
           }),
-        });
-
-        res.catch(reject);
+        }).catch(reject);
 
         if (res.status !== 200) return reject(new Error(res.statusText));
 
@@ -103,9 +99,7 @@ module.exports.Snail = class {
             name: options.name,
             price: options.price,
           }),
-        });
-
-        res.catch(reject);
+        }).catch(reject);
 
         if (res.status !== 200) return reject(new Error(res.statusText));
 
@@ -127,9 +121,7 @@ module.exports.Snail = class {
             Authorization: apiKey,
             "Content-Type": "application/json",
           },
-        });
-
-        res.catch(reject);
+        }).catch(reject);
 
         if (res.status !== 200) return reject(new Error(res.statusText));
 
@@ -151,9 +143,7 @@ module.exports.Snail = class {
             Authorization: apiKey,
             "Content-Type": "application/json",
           },
-        });
-
-        res.catch(reject);
+        }).catch(reject);
 
         if (res.status !== 200) return reject(new Error(res.statusText));
 
@@ -175,9 +165,7 @@ module.exports.Snail = class {
             Authorization: apiKey,
             "Content-Type": "application/json",
           },
-        });
-
-        res.catch(reject);
+        }).catch(reject);
 
         if (res.status !== 200) return reject(new Error(res.statusText));
 
@@ -199,9 +187,7 @@ module.exports.Snail = class {
             Authorization: apiKey,
             "Content-Type": "application/json",
           },
-        });
-
-        res.catch(reject);
+        }).catch(reject);
 
         if (res.status !== 200) return reject(new Error(res.statusText));
 
@@ -223,9 +209,7 @@ module.exports.Snail = class {
             Authorization: apiKey,
             "Content-Type": "application/json",
           },
-        });
-
-        res.catch(reject);
+        }).catch(reject);
 
         if (res.status !== 200) return reject(new Error(res.statusText));
 
@@ -251,9 +235,7 @@ module.exports.Snail = class {
           body: JSON.stringify({
             amount,
           }),
-        });
-
-        res.catch(reject);
+        }).catch(reject);
 
         if (res.status !== 200) return reject(new Error(res.statusText));
 
@@ -277,9 +259,7 @@ module.exports.Snail = class {
           body: JSON.stringify({
             payments,
           }),
-        });
-
-        res.catch(reject);
+        }).catch(reject);
 
         if (res.status !== 200) return reject(new Error(res.statusText));
 
