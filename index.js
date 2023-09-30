@@ -19,7 +19,7 @@ module.exports.Snail = class {
           {
             method: "GET",
             headers: {
-              Authorization: apiKey,
+              "X-API-Key": apiKey,
               "Content-Type": "application/json",
             },
           },
@@ -54,7 +54,7 @@ module.exports.Snail = class {
         const res = await fetch(`https://snailpay.app/api/payment-link`, {
           method: "POST",
           headers: {
-            Authorization: apiKey,
+            "X-API-Key": apiKey,
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
@@ -93,7 +93,7 @@ module.exports.Snail = class {
         const res = await fetch(`https://snailpay.app/api/subscription-link`, {
           method: "POST",
           headers: {
-            Authorization: apiKey,
+            "X-API-Key": apiKey,
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
@@ -120,7 +120,7 @@ module.exports.Snail = class {
         const res = await fetch(`https://snailpay.app/api/payment-list`, {
           method: "GET",
           headers: {
-            Authorization: apiKey,
+            "X-API-Key": apiKey,
             "Content-Type": "application/json",
           },
         }).catch(reject);
@@ -142,7 +142,7 @@ module.exports.Snail = class {
         const res = await fetch(`https://snailpay.app/api/subscription-list`, {
           method: "GET",
           headers: {
-            Authorization: apiKey,
+            "X-API-Key": apiKey,
             "Content-Type": "application/json",
           },
         }).catch(reject);
@@ -166,7 +166,7 @@ module.exports.Snail = class {
           {
             method: "GET",
             headers: {
-              Authorization: apiKey,
+              "X-API-Key": apiKey,
               "Content-Type": "application/json",
             },
           },
@@ -189,7 +189,7 @@ module.exports.Snail = class {
         const res = await fetch(`https://snailpay.app/api/payment-link-list`, {
           method: "GET",
           headers: {
-            Authorization: apiKey,
+            "X-API-Key": apiKey,
             "Content-Type": "application/json",
           },
         }).catch(reject);
@@ -211,7 +211,7 @@ module.exports.Snail = class {
         const res = await fetch(`https://snailpay.app/api/payout`, {
           method: "GET",
           headers: {
-            Authorization: apiKey,
+            "X-API-Key": apiKey,
             "Content-Type": "application/json",
           },
         }).catch(reject);
@@ -234,7 +234,7 @@ module.exports.Snail = class {
         const res = await fetch(`https://snailpay.app/api/new-payout`, {
           method: "POST",
           headers: {
-            Authorization: apiKey,
+            "X-API-Key": apiKey,
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
@@ -258,7 +258,7 @@ module.exports.Snail = class {
         const res = await fetch(`https://snailpay.app/api/refund-payment`, {
           method: "POST",
           headers: {
-            Authorization: apiKey,
+            "X-API-Key": apiKey,
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
