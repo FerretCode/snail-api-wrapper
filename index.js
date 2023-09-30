@@ -15,14 +15,14 @@ module.exports.Snail = class {
         if (code.length !== 10) return resolve(false);
 
         const res = await fetch(
-          `https://snailpay.app/verify-payment?code=${code}`,
+          `https://snailpay.app/api/verify-payment?code=${code}`,
           {
             method: "GET",
             headers: {
               Authorization: apiKey,
               "Content-Type": "application/json",
             },
-          }
+          },
         ).catch(reject);
 
         if (res.status !== 200) return resolve(false);
@@ -43,14 +43,15 @@ module.exports.Snail = class {
      */
     this.createPaymentLink = (options) => {
       return new Promise(async (resolve, reject) => {
-        if (!options.name || !options.price)
+        if (!options.name || !options.price) {
           reject(
             new Error(
-              "You need to provide a name and a price for your product!"
-            )
+              "You need to provide a name and a price for your product!",
+            ),
           );
+        }
 
-        const res = await fetch(`https://snailpay.app/payment-link`, {
+        const res = await fetch(`https://snailpay.app/api/payment-link`, {
           method: "POST",
           headers: {
             Authorization: apiKey,
@@ -81,14 +82,15 @@ module.exports.Snail = class {
      */
     this.createSubscriptionLink = (options) => {
       return new Promise(async (resolve, reject) => {
-        if (!options.name || !options.price)
+        if (!options.name || !options.price) {
           reject(
             new Error(
-              "You need to provide a name and a price for your product!"
-            )
+              "You need to provide a name and a price for your product!",
+            ),
           );
+        }
 
-        const res = await fetch(`https://snailpay.app/subscription-link`, {
+        const res = await fetch(`https://snailpay.app/api/subscription-link`, {
           method: "POST",
           headers: {
             Authorization: apiKey,
@@ -115,7 +117,7 @@ module.exports.Snail = class {
      */
     this.listPayments = () => {
       return new Promise(async (resolve, reject) => {
-        const res = await fetch(`https://snailpay.app/payment-list`, {
+        const res = await fetch(`https://snailpay.app/api/payment-list`, {
           method: "GET",
           headers: {
             Authorization: apiKey,
@@ -137,7 +139,7 @@ module.exports.Snail = class {
      */
     this.listSubscriptions = () => {
       return new Promise(async (resolve, reject) => {
-        const res = await fetch(`https://snailpay.app/subscription-list`, {
+        const res = await fetch(`https://snailpay.app/api/subscription-list`, {
           method: "GET",
           headers: {
             Authorization: apiKey,
@@ -159,13 +161,16 @@ module.exports.Snail = class {
      */
     this.listSubscriptionLinks = () => {
       return new Promise(async (resolve, reject) => {
-        const res = await fetch(`https://snailpay.app/subscription-link-list`, {
-          method: "GET",
-          headers: {
-            Authorization: apiKey,
-            "Content-Type": "application/json",
+        const res = await fetch(
+          `https://snailpay.app/api/subscription-link-list`,
+          {
+            method: "GET",
+            headers: {
+              Authorization: apiKey,
+              "Content-Type": "application/json",
+            },
           },
-        }).catch(reject);
+        ).catch(reject);
 
         if (res.status !== 200) return reject(new Error(res.statusText));
 
@@ -181,7 +186,7 @@ module.exports.Snail = class {
      */
     this.listPaymentLinks = () => {
       return new Promise(async (resolve, reject) => {
-        const res = await fetch(`https://snailpay.app/payment-link-list`, {
+        const res = await fetch(`https://snailpay.app/api/payment-link-list`, {
           method: "GET",
           headers: {
             Authorization: apiKey,
@@ -203,7 +208,7 @@ module.exports.Snail = class {
      */
     this.listPayouts = () => {
       return new Promise(async (resolve, reject) => {
-        const res = await fetch(`https://snailpay.app/payout`, {
+        const res = await fetch(`https://snailpay.app/api/payout`, {
           method: "GET",
           headers: {
             Authorization: apiKey,
@@ -226,7 +231,7 @@ module.exports.Snail = class {
      */
     this.newPayout = (amount) => {
       return new Promise(async (resolve, reject) => {
-        const res = await fetch(`https://snailpay.app/new-payout`, {
+        const res = await fetch(`https://snailpay.app/api/new-payout`, {
           method: "POST",
           headers: {
             Authorization: apiKey,
@@ -250,7 +255,7 @@ module.exports.Snail = class {
      */
     this.refundPayment = (payments) => {
       return new Promise(async (resolve, reject) => {
-        const res = await fetch(`https://snailpay.app/refund-payment`, {
+        const res = await fetch(`https://snailpay.app/api/refund-payment`, {
           method: "POST",
           headers: {
             Authorization: apiKey,
